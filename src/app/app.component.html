@@ -8,12 +8,13 @@
     <td>{{item.gender}}</td>
     <td>{{item.hireDate}}</td>
     <td><button (click)="modifica(item)">Modifica</button></td>
+    <td><button (click)="elimina(item.id)">Elimina</button></td>
   </tr>
 </table>
 
-<div *ngIf="dipendente===true">
+<div *ngIf="datiDipendente!=null">
 
   <input type="text" [(ngModel)]="datiDipendente.firstName">
   <input type="text" [(ngModel)]="datiDipendente.lastName">
-
+  <button (click)="datiDipendente = null">Fatto </button>
 </div>

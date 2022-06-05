@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Employee } from './Employee';
 
 @Component({
   selector: 'app-root',
@@ -52,16 +53,19 @@ export class AppComponent {
   ];
 
   dipendente = false;
-  datiDipendente = {
-    "firstName": '',
-    "lastName": ''
-  };
+  datiDipendente: Employee | null = null;
 
 
-  modifica(i:Object){    
-    this.dipendente = true;
-    this.datiDipendente = JSON.stringify(i);
-    console.log(this.datiDipendente.firstName);
+  modifica(el : Employee){    
+    this.datiDipendente = el;
+  }
+
+  elimina(id:number){
+    for(let i = 0; i < this.data.length; i++){
+      if(this.data[i].id == id){
+        this.data.splice(i, 1);
+      }
+    }
   }
   
 }
