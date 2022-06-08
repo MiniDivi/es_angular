@@ -1,3 +1,10 @@
-p{
-    color: red;
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
+
+table {
+    width: 70%;
+  }
